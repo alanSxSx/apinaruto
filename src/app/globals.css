@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  color: #333; /* Cor do texto */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1 {
+  font-size: 2em; /* Tamanho do texto para h1 */
+}
+
+h2 {
+  font-size: 1.5em; /* Tamanho do texto para h2 */
+}
+
+h3 {
+  font-size: 1.17em; /* Tamanho do texto para h3 */
+}
+
+h4 {
+  font-size: 1em; /* Tamanho do texto para h4 */
+}
+
+h5 {
+  font-size: 0.83em; /* Tamanho do texto para h5 */
+}
+
+h6 {
+  font-size: 0.67em; /* Tamanho do texto para h6 */
 }
