@@ -3,13 +3,21 @@ import { getAllCharacters } from '../api/characters';
 import Characters from '../interfaces/Characters';
 
 // Função para buscar o clã de um personagem
-const getClan = (character: Characters): string[] => {
-  return character?.personal?.clan || [];
+const getClan = (character: Characters): string => {
+  const clan = character?.personal?.clan;
+
+  if (typeof clan === 'string' || typeof clan === 'object') {
+    return JSON.stringify(clan); // ou qualquer outra lógica para representar o objeto como string
+  } else {
+    return 'Sem Clan';
+  }
+
 };
 
 export default async function Teste() {
   try {
     const characters = await getAllCharacters();
+    console.log(characters[1352])
 
     return (
       <div>
@@ -17,7 +25,7 @@ export default async function Teste() {
           <ul key={character.id}>
             <li>ID: {character.id}</li>
             <li>Name: {character.name}</li>
-            <li>Clan: {character?.personal?.clan ? character.personal.clan : 'Sem Clan'}</li>
+            <li>Clan: {getClan(character)}</li>
           </ul>
         ))}
       </div>
