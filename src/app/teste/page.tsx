@@ -79,10 +79,15 @@ export default async function Teste() {
             <CardContent className="flex flex-col items-center justify-center">
               <CardHeader>
                 <CardTitle>{character.name}</CardTitle>
-                <CardDescription>{getClan(character)}</CardDescription>
+                <CardDescription className='flex items-center justify-center'>{getClan(character)}</CardDescription>
               </CardHeader>
               <CardFooter>
                 {getAfiliation(character)}
+              </CardFooter>
+              <CardFooter>
+              {character.personal && character.personal.classification
+                    ? character.personal.classification
+                    : 'Sem Classificação'}
               </CardFooter>
             </CardContent>
           </Card>
